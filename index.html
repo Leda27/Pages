@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewpor    t" content="width=device-width, initial-scale=1">
+  <title>MI PAGINA</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+
+     <!-- Encabezado -->
+  <header class="navbar navbar-expand-lg navbar bg-info">
+    <div class="container">
+      <a class="navbar-brand" href="#">LD</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#descripcion-personal">Sobre mí</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Blog
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="Articulo1.html" class="dropdown-item">Tema De Hardware</a></li>
+              <li><a href="Articulo2.html" class="dropdown-item">La Evolución del Software</a></li>
+              <li><a href="Articulo3.html" class="dropdown-item">La Creación a Través del Código</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#portafolio">Portafolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contacto">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  
+  <section class="carrusel">
+    <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="Img/R (1).jpg" class="d-block w-100" alt="" height="500px" width="1920vh">
+          <div class="carousel-caption d-none d-md-block">
+            <strong>"Programar es como una obra de arte donde creas con ceros y unos."</strong>
+            <p>A simple vista, la programación puede parecer un proceso técnico y rígido, basado en 
+              la lógica matemática y los códigos binarios (ceros y unos). Sin embargo, detrás de esta 
+              apariencia fría y mecánica, se esconde un proceso creativo profundo que, como cualquier 
+              forma de arte, requiere imaginación, innovación y sensibilidad.
+            </p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <video controls class="d-block w-100" height="500px">
+            <source src="IMG/Piensa Diferente, Cambia Al Mundo (Steve Jobs).mp4" type="video/mp4">
+        </video>
+          <div class="carousel-caption d-none d-md-block">
+            <strong>"Detrás de cada línea de código, hay un pensamiento creativo en acción."</strong>
+            <p>Cada línea de código que un programador escribe no surge de la nada; es el resultado 
+              de una serie de decisiones, reflexiones y elecciones que reflejan la creatividad del programador. </p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="IMG/err.jpg" class="d-block w-100" alt="..." height="500px"
+            width="1920vh">
+          <div class="carousel-caption d-none d-md-block">
+            <strong>"En el mundo de la programación, cada error es una oportunidad de aprendizaje."</strong>
+            <p>Nos invita a reconsiderar la percepción negativa que a menudo se asocia con los errores. 
+              En lugar de verlos como fallas 
+              o fracasos, esta perspectiva los transforma en valiosas experiencias de aprendizaje 
+              que enriquecen el proceso de desarrollo y crecimiento como programadores.</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Descripción Personal -->
+  <section id="descripcion-personal" class="my-5">
+    <h2 class="section-title text-center">Descripción Personal</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Sobre Mí</h4>
+          <p>Soy Leydi Daniela Correa Herrera, vivo en el municipio de Chigorodó, Antioquia. Tengo 18 años y actualmente estoy matriculada en Ingeniería de Software y Datos, un campo que considero vital para aplicar todos los conocimientos que he adquirido a lo largo del tiempo. Además, también estudio una tecnologia en Análisis y Desarrollo de Software así que se un poco de esto y mi objetivo es potenciar todo esos conocimientos. Me gustaría poder ayudar a mis demás colegas también en este proceso y así aprender mutuamente.</p>
+          <h5>💻 Mis habilidades:</h5>
+          <ul>
+            <li><strong>Programación:</strong> Tengo conocimientos básicos en lenguajes de programación como Java, PHP, y C++.</li>
+            <li><strong>Desarrollo Web:</strong> Cuento con experiencia en el diseño y desarrollo de sitios web, utilizando tecnologías como HTML, CSS, y JavaScript.</li>
+            <li><strong>Bases de Datos:</strong> Manejo y optimización de bases de datos con SQL.</li>
+          </ul>
+          <h5>🙂 Mis Pasatiempos:</h5>
+          <ul>
+            <li>Disfruto de ver series y películas, así como escuchar música.</li>
+            <li>Me gusta los lugares que me inspiren tranquilidad</li>
+            <li>Amante de los atardeceres</li>
+          </ul>
+        </div>
+        <div class="col-md-5">
+          <img src="IMG/Mi.jpeg" class="img-fluid" alt="Descripción de la imagen">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="nosotros my-5">
+    <h2 class="text-center my-5">BLOG</h2>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-4">
+          <div class="card text-center">
+            <img src="IMG/andornot.png" class="card-img-top"
+              alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Articulo #1</h5>
+              <strong>Compuertas Lógicas</strong>
+              <p class="card-text">
+                Las compuertas lógicas son los bloques esenciales que permiten a las computadoras realizar operaciones complejas. Aunque simples, estos pequeños circuitos son la base de toda la tecnología moderna. En este artículo, descubriremos cómo funcionan y por qué son fundamentales en la computación.</p>
+              <a href="Articulo1.html" class="btn btn-primary">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card text-center">
+            <img src="IMG/OIP.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Articulo #2</h5>
+              <strong>La Evolución del Software: De las Líneas de Código a la Inteligencia Artificial</strong>
+              <p class="card-text">Imagina cómo el software ha pasado de simples líneas de código a sistemas inteligentes capaces de aprender y adaptarse. En este artículo, exploraremos esta sorprendente evolución, desde los primeros programas hasta la inteligencia artificial que está revolucionando nuestra vida diaria.
+                 </p>
+              <a href="Articulo2.html" class="btn btn-primary">Ver más</a>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card text-center">
+            <img src="IMG/All-You-Need-to-Know-About-Javascript-Development.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Articulo #3</h5>
+              <strong> La Creación a Través del Código: El Arte de Programar</strong>
+              <p>La programación puede parecer un proceso técnico y rígido, basado 
+                en la lógica matemática y los códigos binarios (ceros y unos).
+                En este artículo, exploraremos cómo la programación transforma ideas abstractas en soluciones tangibles y elegantes, revelando el lado artístico detrás del código. </p>
+                <a href="Articulo3.html" class="btn btn-primary">Ver más</a>
+            </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="portafolio" class="portafolio my-5">
+    <h2 class="text-center my-5">Portafolio</h2>
+    <div class="container">
+      <div class="row">
+        
+        <!-- Card Proyecto 1 -->
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="IMG/Captura de pantalla (121).png" class="card-img-top" alt="Proyecto 3">
+            <div class="card-body">
+              <h5 class="card-title">Proyecto #1</h5>
+              <strong>HTML</strong>
+              <p class="card-text">
+                Cuando estaba conociendo lo que era el lenguaje de etiquetas html y como era su manejo.
+              </p>
+              <a href="https://leda27.github.io/Proyecto_1/" class="btn btn-primary">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Proyecto 2 -->
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="IMG/Captura de pantalla (119).png" class="card-img-top" alt="Proyecto 1">
+            <div class="card-body">
+              <h5 class="card-title">Proyecto #2</h5>
+              <strong>Entre Lineas</strong>
+              <p class="card-text">
+                Manejo de estructura html, uno de los primeros proyectos con el que empece este proceso de desarrollar.
+              </p>
+              <a href="https://leda27.github.io/EntreLineas/" class="btn btn-primary">Ver más</a>
+            </div>
+          </div>
+        </div>
+  
+  
+        <!-- Card Proyecto 3 -->
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="IMG/Captura de pantalla (120).png" class="card-img-top" alt="Proyecto 2">
+            <div class="card-body">
+              <h5 class="card-title">Proyecto #3</h5>
+              <strong>Dashboard</strong>
+              <p class="card-text">
+                Es una herramienta que visualiza datos clave y métricas relevantes. Sirve para tomar decisiones y hacer un seguimiento eficiente de múltiples fuentes de datos. 
+              </p>
+              <a href="https://leda27.github.io/Dashboard/" class="btn btn-primary">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+       
+        
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  
+  <section id="contacto" class="contáctenos bg-info py-5">
+    <div class="container">
+    <h2 class="section-title text-center">Contacto</h2>
+    <form>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="name" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="subject" class="form-label">Asunto</label>
+            <input type="text" class="form-control" id="subject" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="message" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="message" rows="5" required></textarea>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-light">Enviar</button>
+    </form>
+  </div>
+</section>
+
+<footer class="text-center py-3 bg-dark text-white mt-4">
+  <div class="container">
+      <p>&copy; LD - Todos los derechos reservados</p>
+  </div>
+</footer>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+</html>
