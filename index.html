@@ -9,7 +9,36 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
+<style>
+  .card {
+  border: none; 
+  transition: transform 0.3s, box-shadow 0.3s; 
+}
 
+.card:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.card-img-top {
+  object-fit: cover; 
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.btn-primary {
+  background-color: #007bff; 
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; 
+  border-color: #004080; 
+}
+
+</style>
 <body>
 
      <!-- Encabezado -->
@@ -42,7 +71,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#portafolio">Portafolio</a>
+            <a class="nav-link" href="#portafolio">Proyectos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#contacto">Contacto</a>
@@ -147,55 +176,51 @@
     <h2 class="text-center my-5">BLOG</h2>
     <div class="container">
       <div class="row">
-
+        <!-- Card Artículo 1 -->
         <div class="col-4">
           <div class="card text-center">
-            <img src="IMG/andornot.png" class="card-img-top"
-              alt="...">
+            <img src="IMG/andornot.png" class="card-img-top" alt="Artículo 1">
             <div class="card-body">
-              <h5 class="card-title">Articulo #1</h5>
+              <h5 class="card-title">Blog #1</h5>
               <strong>Compuertas Lógicas</strong>
-              <p class="card-text">
-                Las compuertas lógicas son los bloques esenciales que permiten a las computadoras realizar operaciones complejas. Aunque simples, estos pequeños circuitos son la base de toda la tecnología moderna. En este artículo, descubriremos cómo funcionan y por qué son fundamentales en la computación.</p>
+              <p class="card-text">Las compuertas lógicas son los bloques esenciales que permiten a las computadoras realizar operaciones complejas...</p>
               <a href="Articulo1.html" class="btn btn-primary">Ver más</a>
             </div>
           </div>
         </div>
-
+  
+        <!-- Card Artículo 2 -->
         <div class="col-4">
           <div class="card text-center">
-            <img src="IMG/OIP.jpg" class="card-img-top" alt="...">
+            <img src="IMG/ada_lovelace.jpg" class="card-img-top" alt="Artículo 2">
             <div class="card-body">
-              <h5 class="card-title">Articulo #2</h5>
-              <strong>La Evolución del Software: De las Líneas de Código a la Inteligencia Artificial</strong>
-              <p class="card-text">Imagina cómo el software ha pasado de simples líneas de código a sistemas inteligentes capaces de aprender y adaptarse. En este artículo, exploraremos esta sorprendente evolución, desde los primeros programas hasta la inteligencia artificial que está revolucionando nuestra vida diaria.
-                 </p>
+              <h5 class="card-title">Blog #2</h5>
+              <strong>La Evolución del Software: De las Líneas de Código (Ada Lovelace y demas pioneras)</strong>
+              <p class="card-text">Imagina cómo el software ha pasado de simples líneas de código a sistemas inteligentes capaces de aprender y adaptarse...</p>
               <a href="Articulo2.html" class="btn btn-primary">Ver más</a>
-              </a>
             </div>
           </div>
         </div>
-
+  
+        <!-- Card Artículo 3 -->
         <div class="col-4">
           <div class="card text-center">
-            <img src="IMG/All-You-Need-to-Know-About-Javascript-Development.jpg" class="card-img-top" alt="...">
+            <img src="IMG/All-You-Need-to-Know-About-Javascript-Development.jpg" class="card-img-top" alt="Artículo 3">
             <div class="card-body">
-              <h5 class="card-title">Articulo #3</h5>
-              <strong> La Creación a Través del Código: El Arte de Programar</strong>
-              <p>La programación puede parecer un proceso técnico y rígido, basado 
-                en la lógica matemática y los códigos binarios (ceros y unos).
-                En este artículo, exploraremos cómo la programación transforma ideas abstractas en soluciones tangibles y elegantes, revelando el lado artístico detrás del código. </p>
-                <a href="Articulo3.html" class="btn btn-primary">Ver más</a>
-            </a>
+              <h5 class="card-title">Blog #3</h5>
+              <strong>La Creación a Través del Código: El Arte de Programar</strong>
+              <p class="card-text">La programación puede parecer un proceso técnico y rígido, basado en la lógica matemática y los códigos binarios...</p>
+              <a href="Articulo3.html" class="btn btn-primary">Ver más</a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+  
 
   <section id="portafolio" class="portafolio my-5">
-    <h2 class="text-center my-5">Portafolio</h2>
+    <h2 class="text-center my-5">PROYECTOS</h2>
     <div class="container">
       <div class="row">
         
