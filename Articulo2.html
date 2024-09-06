@@ -8,6 +8,33 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  
+  <style>
+    .card-img-top {
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .card {
+      height: 100%;
+    }
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card {
+      background-color: #f8f9fa;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 
 <body>
@@ -31,6 +58,7 @@
         </nav>
     </div>
 </header>
+
   <!-- Main Content -->
   <main class="container mt-5">
     <div class="text-center mb-5">
@@ -41,10 +69,55 @@
       <p>En la última década, hemos sido testigos de un avance tecnológico sin precedentes. La evolución del software ha transformado nuestra manera de vivir, trabajar y comunicarnos. Como estudiante de Ingeniería de Software y Datos, he tenido la oportunidad de observar de cerca cómo la programación ha pasado de ser una tarea técnica a una disciplina que impulsa la innovación en casi todos los aspectos de nuestra vida cotidiana.</p>
 
       <h2>De los primeros programas a la inteligencia artificial</h2>
-      <p>Cuando se piensa en los inicios del software, no se puede evitar recordar los primeros lenguajes de programación que existieron. Estos lenguajes, aunque revolucionarios en su tiempo, eran limitados en comparación con las capacidades que tenemos hoy en día. Con el paso de los años, hemos visto la llegada de lenguajes más avanzados como Java, Python y C++, que no solo simplifican el proceso de desarrollo, sino que también permiten la creación de sistemas complejos y escalables.</p>
-      <p>Pero el verdadero cambio comenzó cuando la inteligencia artificial (IA) empezó a integrarse en el software. Actualmente, las máquinas no solo ejecutan instrucciones; también aprenden, se adaptan y mejoran con el tiempo. La IA ha abierto puertas a nuevas posibilidades en áreas como la medicina, el transporte, la educación y, por supuesto, la programación.</p>
+      <p>Cuando se piensa en los inicios del software, no se puede evitar recordar a las primeras personas que revolucionaron este campo. Y sorprendentemente, las pioneras de la programación fueron mujeres. Ada Lovelace, en el siglo XIX, es considerada la primera programadora de la historia al desarrollar el primer algoritmo destinado a ser procesado por una máquina.</p>
+
+      <div class="container">
+        <div class="row justify-content-center">
+          <!-- Ada Lovelace Card -->
+          <div class="col-md-4 mb-4">
+            <a href="https://www.youtube.com/watch?v=iadg5o_1sbs" target="_blank" class="text-decoration-none">
+              <div class="card text-center">
+                <img src="IMG/ada_lovelace.jpg" class="card-img-top img-fluid" alt="Ada Lovelace">
+                <div class="card-body">
+                  <h5 class="card-title"><strong>Ada Lovelace</strong></h5>
+                  <p class="card-text">Primera programadora de la historia.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+      
+          <!-- Grace Hopper Card -->
+          <div class="col-md-4 mb-4">
+            <a href="https://www.youtube.com/watch?v=i2a50hFnnEw" target="_blank" class="text-decoration-none">
+              <div class="card text-center">
+                <img src="IMG/grace_hopper.jpg" class="card-img-top img-fluid" alt="Grace Hopper">
+                <div class="card-body">
+                  <h5 class="card-title"><strong>Grace Hopper</strong></h5>
+                  <p class="card-text">Inventora del compilador y pionera del lenguaje COBOL.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+      
+          <!-- Jean Jennings y Frances Bilas Card -->
+          <div class="col-md-4 mb-4">
+            <a href="https://www.youtube.com/watch?v=5KqFC3QrS_Y" target="_blank" class="text-decoration-none">
+              <div class="card text-center">
+                <img src="IMG/eniac_women.jpg" class="card-img-top img-fluid" alt="Jean Jennings y Frances Bilas">
+                <div class="card-body">
+                  <h5 class="card-title"><strong>Jean Jennings y Frances Bilas</strong></h5>
+                  <p class="card-text">Pioneras en el desarrollo del ENIAC.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <p>Con el paso de los años, hemos visto la llegada de lenguajes más avanzados como Java, Python y C++, que no solo simplifican el proceso de desarrollo, sino que también permiten la creación de sistemas complejos y escalables. El verdadero cambio comenzó cuando la inteligencia artificial (IA) empezó a integrarse en el software. Hoy en día, las máquinas no solo ejecutan instrucciones; también aprenden, se adaptan y mejoran con el tiempo.</p>
+
       <div class="text-center my-4">
-        <img src="IMG/OIP (3).jpg" alt="Imagen relacionada con la evolución del software" class="img-fluid" width="600" height="450">
+        <img src="IMG/OIP (3).jpg" alt="Imagen relacionada con la evolución del software" class="img-fluid">
       </div>
 
       <h2>El impacto en el desarrollo personal</h2>
@@ -53,8 +126,9 @@
 
       <h2>Mirando hacia el futuro</h2>
       <p>El futuro del software es emocionante e incierto a la vez. En un mundo cada vez más diversificado, donde el uso de IA o robots podría llegar a manipularnos, el uso ético de estas tecnologías es más importante que nunca.</p>
+
       <div class="text-center my-4">
-        <img src="IMG/R.jpg" alt="Imagen relacionada con el futuro del software" class="img-fluid" width="600" height="450">
+        <img src="IMG/R.jpg" alt="Imagen relacionada con el futuro del software" class="img-fluid">
       </div>
     </div>
   </main>
@@ -62,9 +136,9 @@
   <!-- Footer -->
   <footer class="text-center py-3 bg-dark text-white mt-4">
     <div class="container">
-        <p>&copy; LD - Todos los derechos reservados</p>
+      <p>&copy; LD - Todos los derechos reservados</p>
     </div>
-</footer>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz4fnFO9Qk11q3VvBq6Ecfj8ftzmbK8o05nCIT9Sy/Z1gZZ5p8F6IYb2G7" crossorigin="anonymous"></script>
@@ -73,3 +147,4 @@
 </body>
 
 </html>
+
