@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>La Evolución del Software: De las Líneas de Código a la Inteligencia Artificial</title>
+  <title>La Evolución del Software: De las Líneas de Código</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -34,6 +34,86 @@
     .card:hover {
       transform: scale(1.05);
     }
+    .timeline {
+      position: relative;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 10px 0;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: #007bff;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+    }
+
+    .timeline-item {
+      padding: 20px;
+      position: relative;
+      background: #f8f9fa;
+      border-radius: 6px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      width: 45%;
+      z-index: 1;
+    }
+
+    .timeline-item::before {
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-right: 10px solid #f8f9fa;
+      top: 15px;
+      left: -10px;
+    }
+
+    .timeline-item:nth-child(even) {
+      margin-left: 50%;
+      text-align: right;
+    }
+
+    .timeline-item:nth-child(even)::before {
+      left: auto;
+      right: -10px;
+      border-right: 0;
+      border-left: 10px solid #f8f9fa;
+    }
+
+    @media (max-width: 768px) {
+      .timeline::after {
+        left: 31px;
+      }
+
+      .timeline-item {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .timeline-item::before {
+        left: 15px;
+        border-left: 10px solid #f8f9fa;
+        right: auto;
+      }
+
+      .timeline-item:nth-child(even) {
+        text-align: left;
+      }
+
+      .timeline-item:nth-child(even)::before {
+        left: auto;
+        right: 15px;
+      }
+    }
   </style>
 </head>
 
@@ -62,20 +142,20 @@
   <!-- Main Content -->
   <main class="container mt-5">
     <div class="text-center mb-5">
-      <h1>La Evolución del Software: De las Líneas de Código a la Inteligencia Artificial</h1>
+      <h1>La Evolución del Software: De las Líneas de Código a lo de hoy</h1>
     </div>
 
     <div class="article-content">
       <p>En la última década, hemos sido testigos de un avance tecnológico sin precedentes. La evolución del software ha transformado nuestra manera de vivir, trabajar y comunicarnos. Como estudiante de Ingeniería de Software y Datos, he tenido la oportunidad de observar de cerca cómo la programación ha pasado de ser una tarea técnica a una disciplina que impulsa la innovación en casi todos los aspectos de nuestra vida cotidiana.</p>
 
-      <h2>De los primeros programas a la inteligencia artificial</h2>
+      <h2>De los primeros programas</h2>
       <p>Cuando se piensa en los inicios del software, no se puede evitar recordar a las primeras personas que revolucionaron este campo. Y sorprendentemente, las pioneras de la programación fueron mujeres. Ada Lovelace, en el siglo XIX, es considerada la primera programadora de la historia al desarrollar el primer algoritmo destinado a ser procesado por una máquina.</p>
 
       <div class="container">
         <div class="row justify-content-center">
           <!-- Ada Lovelace Card -->
           <div class="col-md-4 mb-4">
-            <a href="https://www.youtube.com/watch?v=iadg5o_1sbs" target="_blank" class="text-decoration-none">
+            <a href="https://www.youtube.com/watch?v=9f6G6DLwlz0" target="_blank" class="text-decoration-none">
               <div class="card text-center">
                 <img src="IMG/ada_lovelace.jpg" class="card-img-top img-fluid" alt="Ada Lovelace">
                 <div class="card-body">
@@ -88,7 +168,7 @@
       
           <!-- Grace Hopper Card -->
           <div class="col-md-4 mb-4">
-            <a href="https://www.youtube.com/watch?v=i2a50hFnnEw" target="_blank" class="text-decoration-none">
+            <a href="https://www.youtube.com/watch?v=9g5ylW0XtWA" target="_blank" class="text-decoration-none">
               <div class="card text-center">
                 <img src="IMG/grace_hopper.jpg" class="card-img-top img-fluid" alt="Grace Hopper">
                 <div class="card-body">
@@ -101,7 +181,7 @@
       
           <!-- Jean Jennings y Frances Bilas Card -->
           <div class="col-md-4 mb-4">
-            <a href="https://www.youtube.com/watch?v=5KqFC3QrS_Y" target="_blank" class="text-decoration-none">
+            <a href="https://www.youtube.com/watch?v=GzIElndSH6Q" target="_blank" class="text-decoration-none">
               <div class="card text-center">
                 <img src="IMG/eniac_women.jpg" class="card-img-top img-fluid" alt="Jean Jennings y Frances Bilas">
                 <div class="card-body">
@@ -114,37 +194,88 @@
         </div>
       </div>
 
-      <p>Con el paso de los años, hemos visto la llegada de lenguajes más avanzados como Java, Python y C++, que no solo simplifican el proceso de desarrollo, sino que también permiten la creación de sistemas complejos y escalables. El verdadero cambio comenzó cuando la inteligencia artificial (IA) empezó a integrarse en el software. Hoy en día, las máquinas no solo ejecutan instrucciones; también aprenden, se adaptan y mejoran con el tiempo.</p>
+      <h2>Recursos Recomendados</h2>
+      <div class="container">
+        <div class="row">
+          <!-- Libro 1 Card -->
+          <div class="col-md-4 mb-4">
+            <div class="card text-center">
+              <img src="IMG/book1.jpg" class="card-img-top img-fluid" alt="Libro 1">
+              <div class="card-body">
+                <h5 class="card-title"><strong>El Programador Pragmático</strong></h5>
+                <p class="card-text">Un libro esencial para desarrolladores que explora principios fundamentales y prácticas de programación.</p>
+                <a href="https://www.amazon.com/Programmer-Pragmatic-Yourself-Master-Computer/dp/020161622X" target="_blank" class="btn btn-primary">Leer más</a>
+              </div>
+            </div>
+          </div>
 
-      <div class="text-center my-4">
-        <img src="IMG/OIP (3).jpg" alt="Imagen relacionada con la evolución del software" class="img-fluid">
+          <!-- Libro 2 Card -->
+          <div class="col-md-4 mb-4">
+            <div class="card text-center">
+              <img src="IMG/book2.jpg" class="card-img-top img-fluid" alt="Libro 2">
+              <div class="card-body">
+                <h5 class="card-title"><strong>Code: The Hidden Language of Computer Hardware and Software</strong></h5>
+                <p class="card-text">Explora el funcionamiento interno de las computadoras y el software que las hace funcionar.</p>
+                <a href="https://www.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319" target="_blank" class="btn btn-primary">Leer más</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Libro 3 Card -->
+          <div class="col-md-4 mb-4">
+            <div class="card text-center">
+              <img src="IMG/book3.jpg" class="card-img-top img-fluid" alt="Libro 3">
+              <div class="card-body">
+                <h5 class="card-title"><strong>Clean Code</strong></h5>
+                <p class="card-text">Un enfoque para escribir código limpio y eficiente que es fácil de mantener.</p>
+                <a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882" target="_blank" class="btn btn-primary">Leer más</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <h2>El impacto en el desarrollo personal</h2>
-      <p>Hablar de la evolución del software no solo implica un cambio tecnológico. Aprender a programar es más que entender un lenguaje de código; es aprender a resolver problemas cotidianos que, aunque pueden parecer simples, pueden llegar a ser complejos. Enfrentarse a errores durante el proceso es una parte fundamental del aprendizaje.</p>
-      <p>En mi camino como programadora, he aprendido que cada línea de código es una oportunidad para mejorar o adquirir experiencia, no solo como desarrolladora, sino también como persona. Cada error o bug es una lección que impulsa a ser más paciente, perseverante y a buscar siempre la mejor solución posible.</p>
-
-      <h2>Mirando hacia el futuro</h2>
-      <p>El futuro del software es emocionante e incierto a la vez. En un mundo cada vez más diversificado, donde el uso de IA o robots podría llegar a manipularnos, el uso ético de estas tecnologías es más importante que nunca.</p>
-
-      <div class="text-center my-4">
-        <img src="IMG/R.jpg" alt="Imagen relacionada con el futuro del software" class="img-fluid">
+      <h2>Línea de Tiempo de la Evolución del Software</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>1940s: Primeros Programas</h3>
+          <p>Los primeros programas de software fueron desarrollados para las primeras computadoras electrónicas, como el ENIAC.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>1960s: Lenguajes de Programación de Alto Nivel</h3>
+          <p>Aparecen lenguajes de programación como COBOL y FORTRAN, que permiten una programación más accesible y poderosa.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>1980s: La Revolución del Software Personal</h3>
+          <p>La popularización de las computadoras personales lleva al desarrollo de software para consumidores, como sistemas operativos y aplicaciones de oficina.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>2000s: Internet y la Era del Software en la Nube</h3>
+          <p>El auge de Internet y las aplicaciones web transforman la forma en que interactuamos con el software, dando lugar a servicios en la nube.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>2020s: Inteligencia Artificial y Aprendizaje Automático</h3>
+          <p>El desarrollo de la inteligencia artificial y el aprendizaje automático redefine el potencial del software en áreas como la automatización y el análisis de datos.</p>
+        </div>
       </div>
+
+      <h2>Datos Interesantes sobre la Historia del Software</h2>
+      <ul>
+        <li><strong>El Primer Lenguaje de Programación:</strong> Ada Lovelace escribió el primer algoritmo para la máquina analítica de Charles Babbage en 1843.</li>
+        <li><strong>El Primer Virus Informático:</strong> El primer virus informático conocido, llamado "Creeper", fue creado en la década de 1970 y se propagaba a través de redes.</li>
+        <li><strong>El Código Abierto:</strong> El concepto de software de código abierto comenzó a ganar popularidad en la década de 1990 con el lanzamiento de Linux y el movimiento GNU.</li>
+      </ul>
+
+      <h2>Conclusión</h2>
+      <p>La evolución del software ha sido un viaje fascinante desde sus humildes comienzos hasta convertirse en una fuerza transformadora en la vida moderna. Las innovaciones en la programación y el desarrollo de software continúan avanzando, y como futuros ingenieros de software, tenemos la oportunidad de ser parte de esta emocionante historia.</p>
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="text-center py-3 bg-dark text-white mt-4">
-    <div class="container">
-      <p>&copy; LD - Todos los derechos reservados</p>
-    </div>
+  <footer class="bg-dark text-light text-center py-3">
+    <p>&copy; 2024 Leydi Correa. Todos los derechos reservados.</p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz4fnFO9Qk11q3VvBq6Ecfj8ftzmbK8o05nCIT9Sy/Z1gZZ5p8F6IYb2G7" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
-    integrity="sha384-CO5FLvD0h22M/QKc5vY9e0IJWc6ktBL3E76l86Z7S8EG/5Z9y6f6+8RBNT1E8Hs/z" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
-
