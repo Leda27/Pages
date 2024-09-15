@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo Utilizar Git: Un Tutorial Detallado</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+    <header class="navbar navbar-expand-lg navbar bg-info">
+        <div class="container">
+            <a class="navbar-brand" href="#">LD</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Inicio</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mt-5">
+        <div class="text-center mb-5">
+            <h1>Cómo Utilizar Git: Un Tutorial Detallado</h1>
+        </div>
+
+        <div class="article-content">
+            <p>Git es una de las herramientas más importantes para los desarrolladores que buscan gestionar el control
+                de versiones en sus proyectos. En este tutorial, te guiaré paso a paso sobre cómo usar Git, desde la
+                inicialización de un repositorio hasta la gestión de ramas y la conexión con un repositorio remoto. Todo
+                estará acompañado de comandos útiles y ejemplos prácticos.</p>
+
+            <h2>1. Inicialización del Repositorio Localmente</h2>
+            <p>Para comenzar, sigue estos pasos para crear un repositorio local en tu computadora:</p>
+
+            <ul>
+                <li><strong>Paso 1:</strong> Crea una carpeta en tu computadora para tu proyecto. Puedes utilizar un
+                    proyecto existente, como el de tu blog.</li>
+                <li><strong>Paso 2:</strong> Navega a la carpeta donde está tu proyecto.</li>
+            </ul>
+
+            <p>Una vez que estés en la carpeta de tu proyecto, ejecuta el siguiente comando para inicializar Git:</p>
+            <pre><strong>git init</strong></pre>
+
+            <p>Este comando realiza lo siguiente:</p>
+            <ul>
+                <li>Crea un repositorio Git vacío en la carpeta actual.</li>
+                <li>Genera una carpeta oculta llamada <strong>.git</strong> que Git utilizará para almacenar la información
+                    del historial del proyecto, cambios realizados, ramas y configuraciones.</li>
+            </ul>
+
+            <p><strong>Propósito:</strong> El comando <strong>git init</strong> convierte cualquier carpeta en un
+                repositorio Git, permitiéndote rastrear los cambios en los archivos de tu proyecto.</p>
+
+            <h2>2. Crear un Repositorio en GitHub</h2>
+            <p>Después de haber inicializado tu repositorio localmente, es importante crear un repositorio remoto en
+                GitHub. Sigue estos pasos:</p>
+
+            <ul>
+                <li><strong>Paso 1:</strong> Inicia sesión en tu cuenta de GitHub. Si no tienes una cuenta, debes
+                    crearla previamente.</li>
+            </ul>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <img src="IMG/Captura de pantalla (133).png" class="img-fluid"
+                        alt="Paso 1 - Iniciar sesión en GitHub">
+                </div>
+                <div class="col-md-6">
+                    <img src="IMG/Captura de pantalla (134).png" class="img-fluid"
+                        alt="Paso 2 - Crear un nuevo repositorio">
+                </div>
+            </div>
+
+            <ul>
+                <li><strong>Paso 2:</strong> Haz clic en el ícono <strong>+</strong> en la esquina superior derecha de
+                    la página y selecciona <strong>New repository</strong>.</li>
+                <li><strong>Paso 3:</strong> Asigna un nombre a tu repositorio, por ejemplo, "blog", y luego haz clic en
+                    <strong>Create repository</strong>.
+                </li>
+            </ul>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <img src="IMG/Captura de pantalla (135).png" class="img-fluid" alt="Asignar nombre al repositorio">
+                </div>
+                <div class="col-md-6">
+                    <img src="IMG/Captura de pantalla (136).png" class="img-fluid"
+                        alt="Configuración del nuevo repositorio">
+                </div>
+            </div>
+
+            <ul>
+                <li><strong>Paso 4:</strong> Debe aparecerte algo similar a las imágenes anteriores. Si es así, ya has
+                    creado tu repositorio.</li>
+                <li><strong>Paso 5:</strong> Ahora ve a la carpeta donde se encuentra tu proyecto. Haz clic con el botón
+                    derecho y selecciona "Mostrar más opciones", luego elige "Open Git Bash here" o "Abrir Git Bash
+                    aquí".</li>
+            </ul>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <img src="IMG/Captura de pantalla (141).png" class="img-fluid" alt="Ubicación del proyecto">
+                </div>
+                <div class="col-md-6">
+                    <img src="IMG/Captura de pantalla (143).png" class="img-fluid" alt="Abrir Git Bash aquí">
+                </div>
+            </div>
+
+            <ul>
+                <li><strong>Paso 6:</strong> Al seleccionar esta opción, se abrirá la terminal de Git. Asegúrate de
+                    tener Git instalado previamente en tu computadora. Si no lo tienes instalado, puedes descargarlo
+                    desde el siguiente enlace: <a href="https://git-scm.com/downloads"
+                        target="_blank">https://git-scm.com/downloads</a>. Es obligatorio tener Git instalado para subir
+                    tu proyecto a GitHub.</li>
+            </ul>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <img src="IMG/Captura de pantalla (144).png" class="img-fluid" alt="Instalación de Git">
+                </div>
+                <div class="col-md-6">
+                    <img src="IMG/Captura de pantalla (145).png" class="img-fluid" alt="Terminal de Git Bash">
+                </div>
+            </div>
+
+            <h2>3. Agregar Archivos al Repositorio y Hacer un Commit</h2>
+            <p>Ahora que has creado tu repositorio local y remoto, es momento de agregar los archivos a Git y hacer tu
+                primer commit:</p>
+
+            <ul>
+                <li><strong>Paso 7:</strong> En la terminal de Git Bash, ejecuta <strong>git add .</strong> para agregar
+                    todos los archivos de tu proyecto.</li>
+            </ul>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <img src="IMG/Captura de pantalla (147).png" class="img-fluid" alt="Añadir archivos">
+                </div>
+                <div class="col-md-6">
+                    <img src="IMG/Captura de pantalla (148).png" class="img-fluid" alt="Git Bash - Añadir archivos">
+                </div>
+            </div>
+
+            <ul>
+                <li><strong>Paso 8:</strong> Escribe <strong>git commit -m "first commit"</strong> para registrar los
+                    cambios. Después, escribe <strong>git branch -M main</strong> para asegurarte de que estás trabajando en
+                    la rama principal.</li>
+            </ul>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <img src="IMG/Captura de pantalla (149).png" class="img-fluid" alt="Commit inicial">
+                </div>
+                <div class="col-md-6">
+                    <img src="IMG/Captura de pantalla (150).png" class="img-fluid" alt="Terminal - Hacer commit">
+                </div>
+            </div>
+
+            <h2>4. Conectar el Repositorio Local a GitHub</h2>
+            <ul>
+                <li><strong>Paso 9:</strong> Ahora es momento de vincular el repositorio local con el remoto. Para ello,
+                    utiliza el siguiente comando:</li>
+            </ul>
+            <pre><strong>git remote add origin https://github.com/tu_usuario/nombre_repositorio.git</strong></pre>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <img src="IMG/Captura de pantalla (151).png" class="img-fluid" alt="Conectar repositorio">
+                </div>
+                <div class="col-md-6">
+                    <img src="IMG/Captura de pantalla (152).png" class="img-fluid" alt="Configuración de remote">
+                </div>
+            </div>
+
+            <ul>
+                <li><strong>Paso 10:</strong> Finalmente, empuja tu proyecto a GitHub con el comando:</li>
+            </ul>
+            <pre><strong>git push -u origin main</strong></pre>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <img src="IMG/Captura de pantalla (153).png" class="img-fluid" alt="Push a GitHub">
+                </div>
+                <div class="col-md-6">
+                    <img src="IMG/Captura de pantalla (154).png" class="img-fluid" alt="Push exitoso">
+                </div>
+
+                <section class="step">
+                    <h2>3. Creación de Branches en Git</h2>
+                    <p>Las ramas (branches) en Git permiten trabajar en diferentes versiones del proyecto
+                        simultáneamente. Esto es útil para desarrollar nuevas funcionalidades, corregir errores o
+                        experimentar con nuevas ideas sin afectar el código principal.</p>
+
+                    <h3>¿Cuándo utilizar branches?</h3>
+                    <p>Crear ramas es recomendable cuando necesitas trabajar en una nueva característica o realizar
+                        cambios importantes en el proyecto sin afectar la rama principal (generalmente llamada
+                        <strong>main</strong> o <strong>master</strong>). Esto permite realizar cambios de forma aislada y
+                        probar nuevas ideas sin interrumpir el flujo de trabajo principal.
+                    </p>
+
+                    <h3>1. Crear una nueva rama</h3>
+                    <p>Para crear una nueva rama, utiliza el siguiente comando:</p>
+                    <pre><strong>git branch nombre_rama</strong></pre>
+                    <p>Este comando crea una rama llamada <strong>nombre_rama</strong> basada en la rama actual. La nueva
+                        rama es una copia del estado actual del proyecto.</p>
+
+                    <h3>2. Cambiar a la nueva rama</h3>
+                    <p>Una vez que la rama ha sido creada, debes cambiar a ella para empezar a trabajar en ella. Utiliza
+                        el siguiente comando:</p>
+                    <pre><strong>git checkout nombre_rama</strong></pre>
+                    <p>O bien, puedes usar el comando más reciente:</p>
+                    <pre><strong>git switch nombre_rama</strong></pre>
+
+                    <h3>3. Trabajar en la nueva rama</h3>
+                    <p>Ahora que estás en la nueva rama, puedes realizar cambios en el código, agregar archivos, y hacer
+                        commits sin afectar la rama principal.</p>
+
+                    <h3>4. Fusionar ramas con merge</h3>
+                    <p>Una vez que hayas terminado de trabajar en la rama y quieras incorporar los cambios a la rama
+                        principal, debes usar el comando <strong>merge</strong>. Primero, cambia a la rama principal:
+                    </p>
+                    <pre><strong>git checkout main</strong></pre>
+                    <p>Luego, utiliza el siguiente comando para fusionar la rama en la rama principal:</p>
+                    <pre><strong>git merge nombre_rama</strong></pre>
+                    <p>Esto incorpora los cambios realizados en <strong>nombre_rama</strong> a la rama
+                        <strong>main</strong>. Si
+                        hay conflictos entre los archivos modificados en ambas ramas, Git te pedirá que los resuelvas
+                        manualmente.</p>
+
+                    <h3>Ejemplo práctico</h3>
+                    <p>Supongamos que estás trabajando en una nueva funcionalidad y has creado una rama llamada
+                        <strong>feature-login</strong>. Después de realizar y probar los cambios, deseas fusionar estos
+                        cambios en la rama principal:
+                    </p>
+                    <ol>
+                        <li>Crea y cambia a la rama <strong>feature-login</strong>:</li>
+                        <pre><strong>git branch feature-login
+            git checkout feature-login</strong></pre>
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <img src="IMG/Captura de pantalla (167).png" class="img-fluid"
+                                    alt="Crear y cambiar a la rama feature-login">
+                            </div>
+                            <div class="col-md-6">
+                                <img src="IMG/Captura de pantalla (168).png" class="img-fluid"
+                                    alt="Fusionar la rama feature-login en main">
+                            </div>
+                        </div>
+
+                        <li>Haz cambios en el proyecto y realiza commits:</li>
+                        <pre><strong>git add .
+            git commit -m "Add login feature"</strong></pre>
+
+                        <li>Cambia a la rama principal:</li>
+                        <pre><strong>git checkout main</strong></pre>
+
+                        <li>Fusiona la rama <strong>feature-login</strong> en <strong>main</strong>:</li>
+                        <pre><strong>git merge feature-login</strong></pre>
+
+                        <li>Resuelve cualquier conflicto si es necesario y realiza un commit para completar la fusión.
+                        </li>
+                    </ol>
+
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <img src="IMG/Captura de pantalla (169).png" class="img-fluid"
+                                alt="Fusionar la rama feature-login en main">
+                        </div>
+                        <div class="col-md-6">
+                            <img src="IMG/Captura de pantalla (170).png" class="img-fluid" alt="Conflictos y fusión">
+                        </div>
+                    </div>
+
+                    <p>Con estos pasos, has creado, trabajado y fusionado ramas en Git, permitiendo un flujo de trabajo
+                        organizado y eficiente.</p>
+                </section>
+            </main>
+            <footer class="text-center py-3 bg-dark text-white mt-4">
+              <div class="container">
+                  <p>&copy; LD - Todos los derechos reservados</p>
+              </div>
+          </footer>
+
+                <script src="https://strong.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
