@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sobre Nosotros</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+       
+        body {
+            background-color: white;
+        }
+
+        .card-container {
+            perspective: 1000px; 
+        }
+
+        
+        .card {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .card:hover {
+            transform: rotateY(180deg); 
+        }
+
+     
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color:black;
+            font-size: 1.5rem;
+            padding: 20px;
+        }
+
+        
+        .card-front {
+            background-color:deepskyblue; 
+        }
+
+       
+        .card-back {
+            background-color:gainsboro; 
+            transform: rotateY(180deg);
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        
+        #participantes {
+            padding: 60px 0;
+        }
+
+        #participantes h2 {
+            color:black;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Barra de Navegación -->
+    <header class="navbar navbar-expand-lg navbar bg-info">
+        <div class="container">
+            <a class="navbar-brand" href="#">LD</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Habilidades_Mc.html">Habilidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Descripcion.html">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portafolio">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección de Participantes con Cards de dos caras -->
+    <section id="participantes">
+        <div class="container">
+            <h2 class="text-center">Participantes</h2>
+            <div class="row">
+                <!-- Card Esteban Cardona -->
+                <div class="col-md-4 mb-4">
+                    <div class="card-container">
+                        <div class="card">
+                            <div class="card-face card-front">
+                                <span>Esteban Cardona</span>
+                            </div>
+                            <div class="card-face card-back">
+                                <p>Me llamo Esteban, tengo 24 años, estoy casado y tengo 4 gatos hermosísimos. Vivo por las motos y el desarrollo de software. Soy desarrollador junior en Bancolombia.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Brian Herrera -->
+                <div class="col-md-4 mb-4">
+                    <div class="card-container">
+                        <div class="card">
+                            <div class="card-face card-front">
+                                <span>Brian Herrera</span>
+                            </div>
+                            <div class="card-face card-back">
+                                <p>Tengo 28 años y soy del municipio de Nariño, Antioquia. Trabajo en una ONG de desminado civil humanitario. Amo mi trabajo, compartir con los demás y a mi familia.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Esteban Chalarca -->
+                <div class="col-md-4 mb-4">
+                    <div class="card-container">
+                        <div class="card">
+                            <div class="card-face card-front">
+                                <span>Esteban Chalarca</span>
+                            </div>
+                            <div class="card-face card-back">
+                                <p>Soy una persona honesta, comprometida y responsable, con buena actitud para el trabajo en equipo y sensibilidad hacia las situaciones de los demás.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Juan José Noreña -->
+                <div class="col-md-4 mb-4">
+                    <div class="card-container">
+                        <div class="card">
+                            <div class="card-face card-front">
+                                <span>Juan José Noreña</span>
+                            </div>
+                            <div class="card-face card-back">
+                                <p>Nací en Rionegro, Antioquia, tengo 21 años. Me gusta mantenerme en constante desarrollo, aprender de los errores y aplicar esos aprendizajes en la vida.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Manuela Correa -->
+                <div class="col-md-4 mb-4">
+                    <div class="card-container">
+                        <div class="card">
+                            <div class="card-face card-front">
+                                <span>Manuela Correa</span>
+                            </div>
+                            <div class="card-face card-back">
+                                <p>Tengo 26 años, estoy casada y tengo dos hijas. Soy cristiana y líder en la iglesia. Me encanta compartir lo que Dios ha hecho en mí y en mi familia. Soy una soñadora.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Leydi Daniela -->
+                <div class="col-md-4 mb-4">
+                    <div class="card-container">
+                        <div class="card">
+                            <div class="card-face card-front">
+                                <span>Leydi Daniela Correa</span>
+                            </div>
+                            <div class="card-face card-back">
+                                <p>Soy Leydi, tengo 18 años, vivo en Chigorodó, Antioquia. Estudio Ingeniería de Software y Datos, además de una tecnología en Análisis y Desarrollo de Software. Me apasiona aprender y ayudar a otros.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="text-center py-3 bg-dark text-white mt-4">
+        <div class="container">
+            <p>&copy; LD - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
