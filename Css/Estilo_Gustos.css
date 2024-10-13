@@ -9,6 +9,30 @@ body {
     overflow: hidden;
 }
 
+/*Estilos del botón Home*/
+.home {
+    width: 100%;
+    text-align: right;
+    position: absolute;
+    padding: 30px;
+}
+
+.home button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    border: 1px solid #eaeaea;
+    transition: 0.3s;
+}
+
+.home button:hover {
+    background: #ababab;
+    color: #fff;
+    transform: scale(1.5);
+}
+
 .perfil {
     z-index: 1;
     position: absolute;
