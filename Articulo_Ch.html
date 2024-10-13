@@ -1,0 +1,310 @@
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Carrera</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container-main {
+            max-width: 700px;
+            margin-top: 50px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .respuesta {
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            background-color: #f1f1f1;
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .respuesta img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        .respuesta .usuario {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+        }
+
+        .respuesta .usuario .imagen-perfil {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            color: #6c757d;
+            margin-right: 10px;
+            background-size: cover; /* Asegura que la imagen cubra el contenedor */
+            background-position: center; /* Centra la imagen */
+        }
+
+        .respuesta strong {
+            color: #343a40;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .respuesta p {
+            margin: 0;
+            overflow-wrap: break-word;
+            width: calc(100% - 60px);
+            word-break: break-word;
+        }
+
+        /* Cambiar el estilo de la respuesta para permitir saltos de línea */
+        .respuesta pre {
+            margin: 0; /* Elimina el margen por defecto */
+            white-space: pre-wrap; /* Mantiene los espacios y saltos de línea */
+            word-wrap: break-word; /* Ajusta las palabras que son muy largas */
+            width: calc(100% - 60px); /* Asegura que el texto ocupe el ancho disponible */
+        }
+
+        .fecha {
+            font-size: 0.8em;
+            color: #6c757d;
+            margin-top: 5px;
+        }
+
+        .delete-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .alert-position {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            min-width: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-info">
+        <div class="container">
+            <a class="navbar-brand" href="#">LD</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Inicio</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container container-main mt-5">
+        <h2 class="mb-4 text-center">¿Por qué elegiste esta carrera?</h2>
+
+        <form id="formulario" onsubmit="guardarRespuesta(); return false;">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+                <div class="invalid-feedback">
+                    Por favor, ingresa un nombre válido (solo letras y espacios, debe comenzar con mayúscula).
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="imagenUsuario" class="form-label">Imagen de Usuario:</label>
+                <input type="file" class="form-control" id="imagenUsuario" accept="image/*" onchange="prepararImagen(event)">
+            </div>
+
+            <div class="mb-3">
+                <label for="respuesta" class="form-label">Respuesta:</label>
+                <textarea class="form-control" id="respuesta" name="respuesta" rows="4" placeholder="Escribe tu respuesta aquí" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100" id="guardar">Guardar respuesta</button>
+        </form>
+
+        <h3 class="mt-5">respuestas:</h3>
+        <div id="respuestaGuardada" class="mt-3">
+            <!-- Respuestas se mostrarán aquí -->
+        </div>
+    </main>
+
+    <!-- Alert Container -->
+    <div class="alert-position" id="alertContainer"></div>
+
+    <!-- Footer -->
+    <footer class="text-center py-3 bg-dark text-white mt-4">
+        <div class="container">
+            <p>&copy; LD - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script>
+        // Función para verificar la estructura del nombre
+        function validarNombre(nombre) {
+            const regexNombre = /^[A-ZÁÉÍÓÚ][a-záéíóúñ]+\s([A-ZÁÉÍÓÚ][a-záéíóúñ]+\s?)*$/;
+            return regexNombre.test(nombre);
+        }
+
+        // Función para obtener la fecha y hora actuales
+        function obtenerFechaHora() {
+            const ahora = new Date();
+            return ahora.toLocaleString('es-ES', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+        }
+
+        // Función para guardar la respuesta en el almacenamiento local
+        function guardarRespuesta() {
+            const nombre = document.getElementById('nombre').value;
+            const respuesta = document.getElementById('respuesta').value;
+            const imagenUsuario = document.getElementById('imagenUsuario').dataset.imagen;
+            const fechaHora = obtenerFechaHora(); // Obtener fecha y hora
+
+            // Validar que el nombre siga la estructura de un nombre
+            if (!validarNombre(nombre)) {
+                mostrarAlerta('Por favor, ingresa un nombre válido (solo letras y espacios, debe comenzar con mayúscula nombre y apellidos).', 'danger');
+                return;
+            }
+
+            // Recuperar las respuestas anteriores del localStorage
+            let respuestas = JSON.parse(localStorage.getItem('respuestas')) || [];
+
+            // Si ya hay 50 respuestas, bloquear el formulario
+            if (respuestas.length >= 50) {
+                mostrarAlerta('Has alcanzado el límite de 50 respuestas.', 'warning');
+                bloquearFormulario();
+                return;
+            }
+
+            // Añadir la nueva respuesta al array de respuestas
+            respuestas.push({ nombre, respuesta, imagen: imagenUsuario || '', fecha: fechaHora });
+
+            // Guardar el array actualizado en localStorage
+            localStorage.setItem('respuestas', JSON.stringify(respuestas));
+
+            // Mostrar un mensaje al usuario
+            mostrarAlerta('¡Respuesta guardada con éxito!', 'success');
+
+            // Limpiar los campos del formulario
+            document.getElementById('nombre').value = '';
+            document.getElementById('respuesta').value = '';
+            document.getElementById('imagenUsuario').value = '';
+            delete document.getElementById('imagenUsuario').dataset.imagen; // Limpiar imagen
+
+            // Actualizar la lista de respuestas mostrada
+            mostrarRespuestasGuardadas();
+        }
+
+        // Función para preparar y mostrar la imagen de usuario
+        function prepararImagen(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('imagenUsuario').dataset.imagen = e.target.result; // Guardar imagen como URL
+                };
+                reader.readAsDataURL(file); // Leer la imagen como URL
+            }
+        }
+
+        // Función para mostrar las respuestas guardadas y enumerarlas
+        function mostrarRespuestasGuardadas() {
+            const respuestas = JSON.parse(localStorage.getItem('respuestas')) || [];
+            const respuestasDiv = document.getElementById('respuestaGuardada');
+            respuestasDiv.innerHTML = ''; // Limpiar contenido previo
+
+            respuestas.forEach((resp, index) => {
+                respuestasDiv.innerHTML += `
+                    <div class="respuesta">
+                        <div class="usuario">
+                            <div class="imagen-perfil" style="background-image: url('${resp.imagen}');">
+                                ${resp.imagen ? '' : '👤'}
+                            </div>
+                            <strong>${resp.nombre}</strong>
+                        </div>
+                        <pre>${resp.respuesta}</pre>
+                        <span class="fecha">${resp.fecha}</span>
+                        <button class="btn btn-danger btn-sm delete-btn" onclick="borrarRespuesta(${index})">Borrar</button>
+                    </div>
+                `;
+            });
+
+            // Si llegamos a 50 respuestas, bloquear el formulario
+            if (respuestas.length >= 50) {
+                bloquearFormulario();
+            }
+        }
+
+        // Función para mostrar alertas
+        function mostrarAlerta(mensaje, tipo) {
+            const alertContainer = document.getElementById('alertContainer');
+            alertContainer.innerHTML = `
+                <div class="alert alert-${tipo} alert-dismissible fade show" role="alert">
+                    ${mensaje}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            `;
+            setTimeout(() => {
+                alertContainer.innerHTML = '';
+            }, 3000);
+        }
+
+        // Función para borrar una respuesta
+        function borrarRespuesta(index) {
+            let respuestas = JSON.parse(localStorage.getItem('respuestas')) || [];
+            respuestas.splice(index, 1); // Eliminar la respuesta
+            localStorage.setItem('respuestas', JSON.stringify(respuestas)); // Actualizar el almacenamiento
+            mostrarAlerta('Respuesta borrada con éxito!', 'success');
+            mostrarRespuestasGuardadas(); // Actualizar la lista
+        }
+
+        // Función para bloquear los campos del formulario
+        function bloquearFormulario() {
+            document.getElementById('nombre').disabled = true;
+            document.getElementById('respuesta').disabled = true;
+            document.getElementById('guardar').disabled = true;
+        }
+
+        // Ejecutar la función al cargar la página
+        window.onload = mostrarRespuestasGuardadas;
+    </script>
+
+    <script src="https://strong.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

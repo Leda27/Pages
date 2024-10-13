@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hobbies de Mis Amigos</title>
+    
+
+    <!-- Importar fuentes desde Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Raleway:wght@600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        body {
+            background: url("IMG/") no-repeat center center fixed;
+            background: linear-gradient(to right, #e3f2fd, #bbdefb);
+            text-align: center;
+            color: #333;
+            font-family: 'Lora', serif;
+        }
+
+        h1 {
+            color: #1976d2;
+            margin-top: 20px;
+            font-family: 'Raleway', sans-serif;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: auto;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .hobby-img {
+            width: 100px;
+            height: 100px;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            object-fit: cover;
+            display: none;
+        }
+
+        .list-unstyled {
+            padding-left: 0;
+            margin-top: 10px;
+            text-align: left;
+            flex-grow: 1;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px; /* Aumentar el padding */
+            display: none;
+            position: relative;
+            z-index: 1;
+            max-width: 600px; /* Aumentar el ancho máximo */
+            margin: 0 auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .hobbies-title {
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .hobbies-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.9);
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        li strong {
+            margin-left: 10px;
+        }
+        
+         /* Clase para la primera tarjeta (Esteban) */
+         .hobby-card-esteban {
+            background-image: url("IMG/cardona.jpeg"); /* Cambia esta ruta */
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            color: white;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        /* Clase para la segunda tarjeta (Brian) */
+        .hobby-card-brian {
+            background-image: url("IMG/herrera.jpeg"); /* Cambia esta ruta */
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            color: white;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        /* Clase para la tercera tarjeta (Esteban Chalarca) */
+        .hobby-card-chalarca {
+            background-image: url("IMG/chalarca.jpeg"); /* Cambia esta ruta */
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            color: white;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+         /* Clase para la primera tarjeta (juan) */
+         .hobby-card-juan {
+            background-image: url("IMG/nore"); /* Cambia esta ruta */
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            color: white;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+         /* Clase para la primera tarjeta (manuela) */
+         .hobby-card-esteban {
+            background-image: url("IMG/manuela.jpeg"); /* Cambia esta ruta */
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            color: white;
+            margin: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hobbies de Mis Amigos</h1>
+
+    <div class="container">
+        <div class="row">
+            <!-- Tarjetas de los amigos -->
+            <div class="col-md-4">
+                <div class="card text-center" onmouseenter="showHobbies('esteban')" onmouseleave="hideHobbies('esteban')">
+                    <div class="card-body">
+                        <h5 class="card-title">Esteban Cardona</h5>
+                        <ul id="hobbies-esteban" class="list-unstyled">
+                            <li class="hobbies-title"><strong>Hobbies:</strong></li>
+                            <div class="hobbies-grid">
+                                <li onmouseover="showImage(this, 'IMG/salir a rodar.png')" onmouseout="hideImage(this)">
+                                    <strong>Salir a rodar en la moto</strong>
+                                    <img src="IMG/salir a rodar.png" class="hobby-img" alt="Salir a rodar">
+                                </li>
+                                <li onmouseover="showImage(this, 'IMG/nuevo restaurante.png')" onmouseout="hideImage(this)">
+                                    <strong>Probar nuevos restaurantes</strong>
+                                    <img src="IMG/nuevo restaurante.png" class="hobby-img" alt="Probar nuevos restaurantes">
+                                </li>
+                                <li onmouseover="showImage(this, 'IMG/programar.png')" onmouseout="hideImage(this)">
+                                    <strong>Programar</strong>
+                                    <img src="IMG/programar.png" class="hobby-img" alt="Programar">
+                                </li>
+                                <li onmouseover="showImage(this, 'IMG/ver series.png')" onmouseout="hideImage(this)">
+                                    <strong>Ver series</strong>
+                                    <img src="IMG/ver series.png" class="hobby-img" alt="Ver series">
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card text-center" onmouseenter="showHobbies('brian')" onmouseleave="hideHobbies('brian')">
+                    <div class="card-body">
+                        <h5 class="card-title">Brian Herrera</h5>
+                        <ul id="hobbies-brian" class="list-unstyled">
+                            <li class="hobbies-title"><strong>Hobbies:</strong></li>
+                            <div class="hobbies-grid">
+                                <li onmouseover="showImage(this, 'IMG/futbol.png')" onmouseout="hideImage(this)">
+                                    <strong>Jugar al fútbol</strong>
+                                    <img src="IMG/futbol.png" class="hobby-img" alt="Fútbol">
+                                </li>
+                                <li onmouseover="showImage(this, 'IMG/meditar.png')" onmouseout="hideImage(this)">
+                                    <strong>Meditar</strong>
+                                    <img src="IMG/meditar.png" class="hobby-img" alt="Meditación">
+                                </li>
+                                <li onmouseover="showImage(this, 'IMG/estadio.png')" onmouseout="hideImage(this)">
+                                    <strong>Ir al Estadio</strong>
+                                    <img src="IMG/estadio.png" class="hobby-img" alt="Ir al Estadio">
+                                </li>
+                                <li onmouseover="showImage(this, 'IMG/escuchar rap.png')" onmouseout="hideImage(this)">
+                                    <strong>Escuchar Rap</strong>
+                                    <img src="IMG/escuchar rap.png" class="hobby-img" alt="Escuchar Rap">
+                                </li>
+                                <li onmouseover="showImage(this, 'IMG/warzone.png')" onmouseout="hideImage(this)">
+                                    <strong>Jugar online (Warzone)</strong>
+                                    <img src="IMG/warzone.png" class="hobby-img" alt="Jugar online">
+                                </li>
+                                <li onmouseover="showImage(this, 'IMG/familia.png')" onmouseout="hideImage(this)">
+                                    <strong>Pasar tiempo con mi familia</strong>
+                                    <img src="IMG/familia.png" class="hobby-img" alt="Familia">
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card text-center" onmouseenter="showHobbies('chalarca')" onmouseleave="hideHobbies('chalarca')">
+                    <div class="card-body">
+                        <h5 class="card-title">Esteban Chalarca</h5>
+                        <ul id="hobbies-chalarca" class="list-unstyled">
+                            <li class="hobbies-title"><strong>Hobbies:</strong></li>
+                            <div class="hobbies-grid">
+                                <li onmouseover="showImage(this, 'IMG/caminar.png')" onmouseout="hideImage(this)">
+                                    <strong>Caminar</strong>
+                                    <img src="IMG/caminar.png" class="hobby-img" alt="Caminar">
+                                </li>
+                                <li onmouseover="showImage(this, 'IMG/juegos online.png')" onmouseout="hideImage(this)">
+                                    <strong>Jugar online</strong>
+                                    <img src="IMG/juegos online.png" class="hobby-img" alt="Jugar online">
+                                </li>
+                                <li onmouseover="showImage(this, 'IMG/billar.png')" onmouseout="hideImage(this)">
+                                    <strong>Jugar billar</strong>
+                                    <img src="IMG/billar.png" class="hobby-img" alt="Jugar billar">
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card text-center" onmouseenter="showHobbies('juan')" onmouseleave="hideHobbies('juan')">
+                    <div class="card-body">
+                        <h5 class="card-title">Juan José Noreña</h5>
+                        <ul id="hobbies-juan" class="list-unstyled">
+                            <li class="hobbies-title"><strong>Hobbies:</strong></li>
+                            <div class="hobbies-grid">
+                                <li onmouseover="showImage(this, 'IMG/cocinar.png')" onmouseout="hideImage(this)">
+                                    <strong>Cocinar</strong>
+                                    <img src="IMG/cocinar.png" class="hobby-img" alt="Cocinar">
+                                </li>
+                                <li onmouseover="showImage(this, 'IMG/deportes en tv.png')" onmouseout="hideImage(this)">
+                                    <strong>Ver deportes en TV</strong>
+                                    <img src="IMG/deportes en tv.png" class="hobby-img" alt="Ver deportes en TV">
+                                </li>
+                                <li onmouseover="showImage(this, 'IMG/estoicismo.png')" onmouseout="hideImage(this)">
+                                    <strong>Practicar el estoicismo</strong>
+                                    <img src="IMG/estoicismo.png" class="hobby-img" alt="Estoicismo">
+                                </li>
+                                <li onmouseover="showImage(this, 'IMG/musica y baile.png')" onmouseout="hideImage(this)">
+                                    <strong>Escuchar música y bailar de vez en cuando</strong>
+                                    <img src="IMG/musica y baile.png" class="hobby-img" alt="Escuchar música">
+                                </li>
+                                <li onmouseover="showImage(this, 'IMG/investigar.png')" onmouseout="hideImage(this)">
+                                    <strong>Investigar sobre temas de interés</strong>
+                                    <img src="IMG/investigar.png" class="hobby-img" alt="Investigar">
+                                </li>
+                                <li onmouseover="showImage(this, 'IMG/aprender.png')" onmouseout="hideImage(this)">
+                                    <strong>Aprender cosas nuevas</strong>
+                                    <img src="IMG/aprender.png" class="hobby-img" alt="Aprender">
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card text-center" onmouseenter="showHobbies('manuela')" onmouseleave="hideHobbies('manuela')">
+                    <div class="card-body">
+                        <h5 class="card-title">Manuela Correa</h5>
+                        <ul id="hobbies-manuela" class="list-unstyled">
+                            <li class="hobbies-title"><strong>Hobbies:</strong></li>
+                            <div class="hobbies-grid">
+                                <li onmouseover="showImage(this, 'IMG/leer.png')" onmouseout="hideImage(this)">
+                                    <strong>Leer</strong>
+                                    <img src="IMG/leer.png" class="hobby-img" alt="Leer">
+                                </li>
+                                <li onmouseover="showImage(this, 'IMG/aprender.png')" onmouseout="hideImage(this)">
+                                    <strong>Aprender cosas nuevas</strong>
+                                    <img src="IMG/aprender.png" class="hobby-img" alt="Aprender">
+                                </li>
+                                <li onmouseover="showImage(this, 'IMG/compartir en familia.png')" onmouseout="hideImage(this)">
+                                    <strong>Compartir con mi familia</strong>
+                                    <img src="IMG/compartir en familia.png" class="hobby-img" alt="Familia">
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showHobbies(friend) {
+            const hobbies = document.getElementById(`hobbies-${friend}`);
+            hobbies.style.display = 'block';
+        }
+
+        function hideHobbies(friend) {
+            const hobbies = document.getElementById(`hobbies-${friend}`);
+            hobbies.style.display = 'none';
+        }
+
+        function showImage(li, imgSrc) {
+            const img = li.querySelector('.hobby-img');
+            img.src = imgSrc;
+            img.style.display = 'block';
+        }
+
+        function hideImage(li) {
+            const img = li.querySelector('.hobby-img');
+            img.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
