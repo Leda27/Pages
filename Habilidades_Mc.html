@@ -7,137 +7,88 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-nav {
-    background-color:#45bae8;
-    padding: 1rem;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content:right;
-    gap: 2rem;
-}
-
-nav a {
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: black;
-}
-    
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa; /* Color de fondo suave */
         }
-
+        nav {
+            background-color: #45bae8;
+            padding: 1rem;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: right;
+            gap: 2rem;
+        }
+        nav a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: black;
+        }
         h1 {
             text-align: center;
             color: #333;
             font-size: 3em;
-            margin-bottom: 10px;
+            margin-bottom: 20px; /* Mayor espacio abajo */
         }
-
-        .team-description {
-            text-align: center;
-            color: #666;
-            margin-bottom: 40px;
-        }
-
         .team-grid {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 40px;
         }
-
         .team-member {
             text-align: center;
             width: 250px;
+            background: white; /* Fondo blanco para las tarjetas */
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra de tarjeta */
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-
-        .member-photo {
-            width: 150px;
-            height: 150px;
-            background-color: #4CAF50;
-            border-radius: 50%;
-            margin: 0 auto 15px;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .team-member:hover {
+            transform: scale(1.05); /* Efecto de hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Aumentar sombra en hover */
         }
-
         .member-photo img {
             width: 100%;
-            height: 100%;
+            height: 150px;
             object-fit: cover;
+            border-radius: 10px 10px 0 0; /* Bordes redondeados solo en la parte superior */
         }
-
         .member-name {
             font-weight: bold;
-            margin-bottom: 5px;
+            margin: 10px 0;
         }
-
         .member-role {
             color: #666;
             font-size: 0.9em;
             margin-bottom: 10px;
         }
-
         .member-skills {
             text-align: left;
             font-size: 0.8em;
             color: #333;
+            padding: 10px; /* Añadir padding a las habilidades */
         }
-
-        .member-skills ul {
-            padding-left: 20px;
-            margin-top: 5px;
+        footer {
+            background-color: #333;
+            color: white;
         }
-
-        /* Estilos consistentes con el index.html */
-        .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
-        }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #004080;
-        }
-
-        .card {
-            border: none;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .card-body {
-            padding: 1.5rem;
-        }
-
     </style>
 </head>
 <body>
     <header class="navbar navbar-expand-lg navbar bg-info">
         <div class="container">
             <a class="navbar-brand" href="#">LD</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -159,6 +110,7 @@ nav a:hover {
             </div>
         </div>
     </header>
+
     <div class="container">
         <h1>Meet the Team</h1>
         <p class="team-description">Estudiantes de ingeniería de software y datos trabajando juntos para crear soluciones innovadoras.</p>
@@ -166,7 +118,7 @@ nav a:hover {
         <div class="team-grid">
             <div class="team-member">
                 <div class="member-photo">
-                    <img src="IMG/esteban cardona.jpeg" alt="Esteban Cardona">
+                    <img src="IMG/Esteban_Cardona.jpeg" alt="Esteban Cardona">
                 </div>
                 <h3 class="member-name">Esteban Cardona</h3>
                 <p class="member-role">Estudiante de Ingeniería de Software y Datos</p>
@@ -183,7 +135,7 @@ nav a:hover {
                     </ul>
                 </div>
             </div>
-            
+
             <div class="team-member">
                 <div class="member-photo">
                     <img src="IMG/brian.jpeg" alt="Brian Herrera">
@@ -192,15 +144,14 @@ nav a:hover {
                 <p class="member-role">Estudiante de Ingeniería de Software y Datos</p>
                 <div class="member-skills">
                     <ul>
-                        <li>Capacidad de aprendizaje rápido</li>
-                        <li>Adaptabilidad a diferentes situaciones</li>
-                        <li>Pasión por el aprendizaje intensivo</li>
-                        <li>Habilidad para interactuar con personas</li>
-                        <li>Técnicas de despeje manual para identificación de artefactos peligrosos</li>
+                        <li>Aprendizaje Rápido</li>
+                        <li>Adaptabilidad</li>
+                        <li>Interacción con Personas</li>
+                        <li>Técnicas de Despeje Manual</li>
                     </ul>
                 </div>
             </div>
-            
+
             <div class="team-member">
                 <div class="member-photo">
                     <img src="IMG/esteban.jpeg" alt="Esteban Chalarca">
@@ -210,30 +161,30 @@ nav a:hover {
                 <div class="member-skills">
                     <ul>
                         <li>Cocinar</li>
-                        <li>Uso de tecnología</li>
-                        <li>Adaptabilidad al cambio</li>
-                        <li>Pintar viviendas</li>
+                        <li>Uso de Tecnología</li>
+                        <li>Adaptabilidad al Cambio</li>
+                        <li>Pintar Viviendas</li>
                     </ul>
                 </div>
             </div>
-            
+
             <div class="team-member">
                 <div class="member-photo">
-                    <img src="../IMG/Modelo.jpg" alt="Juan José Noreña">
+                    <img src="IMG/Foto1JUJONOGI.jpg" alt="Juan José Noreña">
                 </div>
                 <h3 class="member-name">Juan José Noreña</h3>
                 <p class="member-role">Estudiante de Ingeniería de Software y Datos</p>
                 <div class="member-skills">
                     <ul>
                         <li>Cocinar</li>
-                        <li>Sociable</li>
-                        <li>Habilidades en resolución de conflictos</li>
-                        <li>Resiliente y adaptable al entorno</li>
-                        <li>Bueno en los deportes</li>
+                        <li>Sociabilidad</li>
+                        <li>Resolución de Conflictos</li>
+                        <li>Resiliencia</li>
+                        <li>Deportes</li>
                     </ul>
                 </div>
             </div>
-            
+
             <div class="team-member">
                 <div class="member-photo">
                     <img src="IMG/manuela.jpeg" alt="Manuela Correa">
@@ -246,39 +197,19 @@ nav a:hover {
                         <li>Escuchar</li>
                         <li>Cantar</li>
                         <li>Tecnología</li>
-                        <li>Dar consejos</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="team-member">
-                <div class="member-photo">
-                    <img src="IMG/Mi.jpeg" alt="Leydi">
-                </div>
-                <h3 class="member-name">Leydi</h3>
-                <p class="member-role">Estudiante de Ingeniería de Software y Datos</p>
-                <div class="member-skills">
-                    <ul>
-                        <li>Aprendizaje rápido y adaptación</li>
-                        <li>Programación básica (Java, PHP, C++)</li>
-                        <li>Diseño y desarrollo web (HTML, CSS, JavaScript)</li>
-                        <li>Manejo de bases de datos con SQL</li>
-                        <li>Facilidad para interactuar y colaborar en equipo</li>
+                        <li>Dar Consejos</li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer class="text-center py-3 bg-dark text-white mt-4">
+    <footer class="text-center py-3 mt-4">
         <div class="container">
             <p>&copy; LD - Todos los derechos reservados</p>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
-    </script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
